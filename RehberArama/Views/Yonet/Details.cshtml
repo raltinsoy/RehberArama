@@ -1,0 +1,57 @@
+﻿@model RehberArama.Models.SearchModels
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Ad)</dt>
+        <dd>@Html.DisplayFor(model => model.Ad)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Soyad)</dt>
+        <dd>@Html.DisplayFor(model => model.Soyad)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Unite)</dt>
+        <dd>@Html.DisplayFor(model => model.Unite)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Fabrika)</dt>
+
+        <dd>@Html.DisplayFor(model => model.Fabrika)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Pozisyon)</dt>
+        <dd>@Html.DisplayFor(model => model.Pozisyon)</dd>
+
+
+        <dt>@Html.DisplayNameFor(model => model.Is_Tel1)</dt>
+        <dd>@Html.DisplayFor(model => model.Is_Tel1)</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Tel2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Tel2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kurumsal_Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kurumsal_Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telsiz_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telsiz_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

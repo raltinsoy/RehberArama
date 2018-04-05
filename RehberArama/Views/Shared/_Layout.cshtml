@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.Label("Rehber", new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Hızlı Arama", "Select2Search", "Search")</li>
+                    <li>@Html.ActionLink("Detaylı Arama", "SorguKategori", "Rehberler")</li>
+                    <li>@Html.ActionLink("Detaylı Arama2", "Index", "DetayliArama")</li>
+
+                    @if (Url.RequestContext.RouteData.Values["controller"].Equals("Yonet")
+                            && Url.RequestContext.RouteData.Values["action"].Equals("Index"))
+                    {
+                        <li>
+                            @Html.ActionLink("Yeni Kayıt", "Create")
+                        </li>
+                    }
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Yönet", "Index", "Yonet")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+</body>
+</html>

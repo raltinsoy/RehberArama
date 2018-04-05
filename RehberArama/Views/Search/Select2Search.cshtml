@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Select2Search";
+}
+
+<script src="~/Content/jquery.min.js"></script>
+<script src="~/Content/select2.full.js"></script>
+<link href="~/Content/select2.min.css" rel="stylesheet" />
+<link href="~/Content/s2-docs.css" rel="stylesheet" />
+
+<style type="text/css">
+    .select2-result-repository__statistics div:after {
+        content: " | ";
+        padding-left: 10px;
+    }
+
+    .body-content {
+        margin-top: 20px;
+        height: 550px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+
+    .select2-results__options {
+        max-height: 440px !important;
+    }
+</style>
+
+<div style="margin-top:20px;width:600px;">
+    <select class="js-example-data-ajax form-control">
+        <option value="0" selected="selected">Rehber Arama</option>
+    </select>
+</div>
+<table id="Select2List"></table>
+
+<script type="text/javascript">
+
+    var $ajax = $(".js-example-data-ajax");
+    function formatRepo(repo) {
+        if (repo.loading) return repo.text;
+        var markup = "<div class='select2-result-repository clearfix'>" +
+            "<div class='select2-result-repository__avatar'><img src='" + repo.resimUrl + "' /></div>" +
+            "<div class='select2-result-repository__meta'>" +
+            "<div class='select2-result-repository__title'>" + repo.Ad + " " + repo.Soyad + "</div>";
+        markup += "<div class='select2-result-repository__statistics'>" +
+            "<div class='select2-result-repository__unite'><i class='fa fa-flash'></i>" + repo.Unite + "</div>" +
+            "<div class='select2-result-repository__fabrika'><i class='fa fa-star'></i>" + repo.Fabrika + "</div>" +
+            "<div class='select2-result-repository__pozisyon'><i class='fa fa-eye'></i>" + repo.Pozisyon + "</div>" +
+
+            "<div class='select2-result-repository__telsizNo'><i class='fa fa-eye'></i>" + repo.Telsiz_No + "</div>" +
+            "<div class='select2-result-repository__isTel'><i class='fa fa-eye'></i>" + repo.Is_Tel1 + "</div>" +
+            "<div class='select2-result-repository__isTel2'><i class='fa fa-eye'></i>" + repo.Is_Tel2 + "</div>" +
+            "<div class='select2-result-repository__email'><i class='fa fa-eye'></i>" + repo.Email + "</div>" +
+            "<div class='select2-result-repository__kurTel'><i class='fa fa-eye'></i>" + repo.Kurumsal_Tel + "</div>" +
+        "</div>" +
+        "</div></div>";
+        return markup;
+    }
+
+    function formatRepoSelection(repo) {
+        return repo.Ad || repo.text;
+    }
+
+    $ajax.select2({
+        ajax: {
+            url: "/Search/Select2GetJson",
+            dataType: 'json',
+            delay: 250,
+            type: "POST",
+            data: function (params) {
+                return {
+                    q: params.term, // search term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data,
+                };
+            },
+            cache: true
+        },
+        escapeMarkup: function (markup) { return markup; },
+        minimumInputLength: 2,
+        maximumInputLength: 11,
+        templateResult: formatRepo,
+        templateSelection: formatRepoSelection
+
+    }).on('select2:select', function (e) {
+            $.ajax({
+                url: "/Search/EklenecekListe",
+                type: "POST",
+                data: { "q": e.params.data.ID },
+                error: searchFailed,
+                success: function (data) { $("#Select2List").html(data); }
+            });
+            function searchFailed() {
+                alert("Ajax Arama Hatası");
+            }
+    });
+
+</script>
+
+

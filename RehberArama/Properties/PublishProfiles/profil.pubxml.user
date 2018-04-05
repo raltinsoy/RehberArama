@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\ramazan\Desktop\a</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/14/2016 01:25:11</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>10/14/2016 01:25:11</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/14/2016 01:23:43</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/14/2016 01:23:43</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/14/2016 01:23:18</publishTime>
+    </File>
+    <File Include="bin/RehberArama.dll">
+      <publishTime>10/14/2016 02:06:01</publishTime>
+    </File>
+    <File Include="bin/RehberArama.pdb">
+      <publishTime>10/14/2016 02:06:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/14/2016 01:22:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/14/2016 01:22:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/14/2016 01:24:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/14/2016 01:22:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>10/14/2016 01:22:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>10/14/2016 01:22:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>10/14/2016 01:22:45</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/14/2016 01:25:11</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/13/2016 10:15:42</publishTime>
+    </File>
+    <File Include="Content/jquery.min.js">
+      <publishTime>06/29/2016 23:01:32</publishTime>
+    </File>
+    <File Include="Content/Rehber.css">
+      <publishTime>07/29/2016 14:37:27</publishTime>
+    </File>
+    <File Include="Content/s2-docs.css">
+      <publishTime>07/01/2016 16:35:53</publishTime>
+    </File>
+    <File Include="Content/select2.full.js">
+      <publishTime>07/01/2016 14:57:20</publishTime>
+    </File>
+    <File Include="Content/select2.min.css">
+      <publishTime>07/01/2016 09:20:56</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/13/2016 15:47:44</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/14/2016 01:22:43</publishTime>
+    </File>
+    <File Include="images/user-128.png">
+      <publishTime>07/14/2016 15:10:58</publishTime>
+    </File>
+    <File Include="Models/RehberEDModel.edmx.diagram">
+      <publishTime>10/14/2016 01:27:08</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.js">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.js">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.map">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.js">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.js">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.map">
+      <publishTime>10/14/2016 01:23:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>10/14/2016 01:25:07</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>10/14/2016 01:25:07</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/14/2016 01:29:52</publishTime>
+    </File>
+    <File Include="Views/DetayliArama/Index.cshtml">
+      <publishTime>10/14/2016 01:43:50</publishTime>
+    </File>
+    <File Include="Views/DetayliArama/_SonucGetir.cshtml">
+      <publishTime>10/14/2016 01:43:42</publishTime>
+    </File>
+    <File Include="Views/Rehberler/PersonelPartial.cshtml">
+      <publishTime>10/14/2016 01:43:32</publishTime>
+    </File>
+    <File Include="Views/Rehberler/SorguKategori.cshtml">
+      <publishTime>10/14/2016 01:43:28</publishTime>
+    </File>
+    <File Include="Views/Rehberler/SoyadGetir.cshtml">
+      <publishTime>10/14/2016 01:43:37</publishTime>
+    </File>
+    <File Include="Views/Search/Index.cshtml">
+      <publishTime>10/14/2016 01:30:07</publishTime>
+    </File>
+    <File Include="Views/Search/Select2Search.cshtml">
+      <publishTime>10/14/2016 02:05:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/14/2016 01:49:36</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>10/14/2016 01:22:43</publishTime>
+    </File>
+    <File Include="Views/Yonet/Create.cshtml">
+      <publishTime>10/14/2016 01:58:25</publishTime>
+    </File>
+    <File Include="Views/Yonet/Delete.cshtml">
+      <publishTime>10/14/2016 01:44:13</publishTime>
+    </File>
+    <File Include="Views/Yonet/Details.cshtml">
+      <publishTime>10/14/2016 01:44:16</publishTime>
+    </File>
+    <File Include="Views/Yonet/Edit.cshtml">
+      <publishTime>10/14/2016 01:44:21</publishTime>
+    </File>
+    <File Include="Views/Yonet/Index.cshtml">
+      <publishTime>10/14/2016 01:52:12</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/14/2016 01:29:49</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/14/2016 02:06:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

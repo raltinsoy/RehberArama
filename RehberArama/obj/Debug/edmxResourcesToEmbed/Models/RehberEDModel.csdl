@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SearchModels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fabrika" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pozisyon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Tel1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Tel2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Kurumsal_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Telsiz_No" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="resimUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="RehberEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SearchModels" EntityType="Self.SearchModels" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,175 @@
+﻿@model RehberArama.Models.SearchModels
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<link href="~/Content/Rehber.css" rel="stylesheet" />
+
+<div class="detayliArama">
+    @using (Html.BeginForm("SorguKategori", "Rehberler", new { isim = string.Empty }))
+    {
+        @Html.AntiForgeryToken()
+        string k_id = "Ad"; bool select = false;  <!-- Radio Button Başlangıç -->
+        <p align="center">
+            @if (ViewBag.Kategori != null)
+            {
+                int say = 1;
+                foreach (var item in ViewBag.Kategori)
+                {
+                    k_id = item.Value;
+                    select = item.Selected;
+                    @Html.RadioButton("kategori", k_id, select
+                    , new { @onclick = "radioClick(value)", @id = "radio" + say }); @item.Text
+                    say++;
+                }
+            }
+        </p>
+
+    <!-- Arama Başlangıç -->
+            //<span id="filt">Ad Filtresi:</span>
+            <div class="col-lg-6" style="float:none;width:350px;margin-left:26%">
+                <div class="input-group">
+                    @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "...", @style = "height:inherit;" })
+                    <span class="input-group-btn"><input type="submit" class="btn btn-default" value="Sorgula" /></span>
+                </div>
+            </div>
+
+     <!-- Arama Seçeneği Başlangıç -->
+            <p align="center">
+                <input type="radio" name="durum" value="0" /> <span> ile başlayanlar </span>
+                <input type="radio" name="durum" value="1" checked="checked" /> <span> içinde geçenler </span>
+            </p>
+    }
+
+    <div style="overflow:auto;height:400px;">
+            @if (ViewBag.topModel != null)
+            {
+                <table class="table table-hover table-striped">
+                    <tr><th>Ad</th></tr>
+
+                @foreach (var item in ViewBag.topModel)
+                {
+                    <tr><td>
+                        @{ string isimSoyisim = item.Value; }
+
+                        @Ajax.ActionLink(isimSoyisim, "SoyadGetir", new
+                        {
+                            isim = isimSoyisim,
+                            search = Request["search"],
+                            kategori = Request["kategori"],
+                            durum = Request["durum"]
+                        }, new AjaxOptions
+                        {
+                            UpdateTargetId = "SoyadGetir",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "POST"
+                        })
+                    </td></tr>
+                }
+                
+                
+                </table>
+                <div id="SoyadGetir">
+                    <table class="table table-hover table-striped">
+                        <tr><th>Soyad</th></tr>
+                    </table>
+                </div>
+            }
+        
+    </div>
+</div>
+
+<div id="PersonelPartial" tabindex="-1">
+    @if (Model != null)
+    {
+        <script>
+            $("#PersonelPartial").focus();
+        </script>
+        <img id="resim" src="@Html.DisplayFor(model=>model.resimUrl)" />
+        <table id="personel" class="table table-hover table-striped">
+            <tr>
+                <th>@Html.DisplayNameFor(model=>model.Ad)</th>
+                <td>@Html.DisplayFor(model=>model.Ad)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model=>model.Soyad)</th>
+                <td>@Html.DisplayFor(model => model.Soyad)</td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Unite)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Unite)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fabrika)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Fabrika)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pozisyon)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Pozisyon)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Is_Tel1)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Is_Tel1)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Is_Tel2)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Is_Tel2)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kurumsal_Tel)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Kurumsal_Tel)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telsiz_No)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Telsiz_No)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+
+
+<script>
+    document.getElementById("search").placeholder = $('input[name="kategori"]:checked').val() + " Filtresi ";
+    function radioClick(valu){
+        document.getElementById("search").placeholder = valu + " Filtresi ";
+    }
+</script>
+
+
+
+
+

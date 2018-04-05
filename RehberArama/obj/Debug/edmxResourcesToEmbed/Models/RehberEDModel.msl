@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="RehberEntities">
+    <EntitySetMapping Name="SearchModels">
+      <EntityTypeMapping TypeName="Model.SearchModels">
+        <MappingFragment StoreEntitySet="SearchModels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Fabrika" ColumnName="Fabrika" />
+          <ScalarProperty Name="Pozisyon" ColumnName="Pozisyon" />
+          <ScalarProperty Name="Is_Tel1" ColumnName="Is_Tel1" />
+          <ScalarProperty Name="Is_Tel2" ColumnName="Is_Tel2" />
+          <ScalarProperty Name="Kurumsal_Tel" ColumnName="Kurumsal_Tel" />
+          <ScalarProperty Name="Telsiz_No" ColumnName="Telsiz_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="resimUrl" ColumnName="resimUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

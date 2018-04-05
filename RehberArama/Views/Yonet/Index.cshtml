@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RehberArama.Models.SearchModels>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Ad)</th>
+        <th>@Html.DisplayNameFor(model => model.Soyad)</th>
+        <th>@Html.DisplayNameFor(model => model.Unite)</th>
+        <th>@Html.DisplayNameFor(model => model.Fabrika)</th>
+        <th>@Html.DisplayNameFor(model => model.Pozisyon)</th>
+        <th>@Html.DisplayNameFor(model => model.Is_Tel1)</th>
+        <th>@Html.DisplayNameFor(model => model.Is_Tel2)</th>
+        <th>@Html.DisplayNameFor(model => model.Kurumsal_Tel)</th>
+        <th>@Html.DisplayNameFor(model => model.Telsiz_No)</th>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Ad)</td>
+        <td>@Html.DisplayFor(modelItem => item.Soyad)</td>
+        <td>@Html.DisplayFor(modelItem => item.Unite)</td>
+        <td>@Html.DisplayFor(modelItem => item.Fabrika)</td>
+        <td>@Html.DisplayFor(modelItem => item.Pozisyon)</td>
+        <td>@Html.DisplayFor(modelItem => item.Is_Tel1)</td>
+        <td>@Html.DisplayFor(modelItem => item.Is_Tel2)</td>
+        <td>@Html.DisplayFor(modelItem => item.Kurumsal_Tel)</td>
+        <td>@Html.DisplayFor(modelItem => item.Telsiz_No)</td>
+        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+        <td>@Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })</td>
+    </tr> }
+</table>
+

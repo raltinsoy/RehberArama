@@ -1,0 +1,156 @@
+﻿@model RehberArama.Models.SearchModels
+
+@if (Model != null)
+{
+    <img id="resim" src="@Html.DisplayFor(model=>Model.resimUrl)" />
+
+    <table id="personel" class="table table-hover table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Ad)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Ad)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Soyad)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Soyad)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Unite)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Unite)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Fabrika)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Fabrika)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Pozisyon)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Pozisyon)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Is_Tel1)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Is_Tel1)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Is_Tel2)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Is_Tel2)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Kurumsal_Tel)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Kurumsal_Tel)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Telsiz_No)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Telsiz_No)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Email)
+            </th>
+            <td>
+                @Html.DisplayFor(model => Model.Email)
+            </td>
+        </tr>
+    </table>
+}
+else // Boş tablo bas
+{
+    <table id="personel" class="table table-hover table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Unite)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fabrika)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pozisyon)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Tel1)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Tel2)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kurumsal_Tel)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Telsiz_No)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <td></td>
+        </tr>
+
+    </table>
+}
+

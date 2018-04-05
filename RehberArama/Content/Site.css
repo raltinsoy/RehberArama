@@ -1,0 +1,62 @@
+﻿body {
+    height:100%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+table {
+    float: left;
+    margin: 30px 5px 5px 5px;
+    width: 49% !important;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    text-align: center;
+    border: 1px solid black;
+}
+
+form{
+    margin-top:20px;
+}
+
+input[type="radio"]{
+    margin-left:10px !important;
+    margin-right:2px !important;
+}
+
+.araDiv{
+    border-style:solid;
+    margin: 8px 4px 4px 4px;
+}
+
+.araDiv span{
+    color: #d40000;
+}
+
+.indir{
+    padding-right:200px;
+}
+
+#Select2List{
+    float: right;
+    margin: -30px 5px 5px 5px;
+    width: 400px !important;
+}
+
+#Select2List th,td{
+    text-align:center;
+    width: 200px;
+    padding:5px !important;
+}
+
+#filt{
+    float:left;
+}
+

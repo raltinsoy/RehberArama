@@ -1,0 +1,24 @@
+﻿@model string
+
+<div id="allBody">
+
+    @if (Model != null)
+    {
+        using (Html.BeginForm("Index", "Search"))
+        {
+            <input type="text" name="ara" id="arama" />
+            <input type="submit" value="Ara" />
+        }
+        @Html.Raw(Model) // Html taglarını çalıştırır
+    }
+    else
+    {
+        using (Html.BeginForm("Index", "Search"))
+        {
+            <div align="center" style="padding-top:50px;font-size:large;">
+                <input type="text" name="ara" id="arama" />
+                <input type="submit" value="Ara" />
+            </div>
+        }
+    }
+</div>

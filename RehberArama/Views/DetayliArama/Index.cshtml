@@ -1,0 +1,172 @@
+﻿@model IEnumerable<RehberArama.Models.DetayliAramaModel>
+<!-- MVC_Project.Models.RehberDB -->
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<link href="~/Content/Rehber.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    .detayliArama table{
+        float:none;
+    }
+</style>
+
+<div class="detayliArama">
+
+    @using (Html.BeginForm("Index", "DetayliArama", new { isim = string.Empty }))
+    {
+        @Html.AntiForgeryToken()
+
+        string k_id = "Ad"; bool select = false;  <!-- Radio Button Başlangıç -->
+        <p align="center">
+            @if (ViewBag.Kategori != null)
+            {
+                int say = 1;
+                foreach (var item in ViewBag.Kategori)
+                {
+                    k_id = item.Value;
+                    select = item.Selected;
+                    @Html.RadioButton("kategori", k_id, select, new { @onclick = "radioClick(value)", @id = "radio" + say }); @item.Text
+                    say++;
+                }
+            }
+        </p>
+
+    <!-- Arama Başlangıç -->
+            //<span id="filt">Ad Filtresi:</span>
+            <div class="col-lg-6" style="float:none;width:350px;margin-left:26%">
+                <div class="input-group">
+                    @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "...", @style = "height:inherit;" })
+                    <span class="input-group-btn"><input type="submit" class="btn btn-default" value="Sorgula" /></span>
+                </div>
+            </div>
+
+     <!-- Arama Seçeneği Başlangıç -->
+            <p align="center">
+                <input type="radio" name="durum" value="0" /> <span> ile başlayanlar </span>
+                <input type="radio" name="durum" value="1" checked="checked" /> <span> içinde geçenler </span>
+            </p>
+    }
+
+    <div id="SonucuBas" style="overflow:auto;height:400px;">
+
+        @if (Model != null)
+        {
+            <table style="margin-left:auto;margin-right:auto;" class="table table-hover table-striped">
+                <tr>
+                    <th>
+                        Ad-Soyad
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+
+                            @Ajax.ActionLink(item.kisi, "SonucGetir", new
+                            {
+                                id = item.kisiID
+
+                            }, new AjaxOptions
+                            {
+                                UpdateTargetId = "PersonelPartial",
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "POST",
+                                OnSuccess = "$( \"#PersonelPartial\" ).focus();"
+                            })
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+
+    </div>
+</div>
+
+<div id="PersonelPartial" tabindex="-1">
+    @*<table id="personel" class="table table-hover table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Ad)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Soyad)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Unite)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Fabrika)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Pozisyon)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Is_Tel1)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Is_Tel2)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Kurumsal_Tel)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Telsiz_No)
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sModel.Email)
+            </th>
+            <td></td>
+        </tr>
+    </table>*@
+</div>
+
+
+
+<script>
+
+    document.getElementById("search").placeholder = $('input[name="kategori"]:checked').val() + " Filtresi ";
+
+    function radioClick(valu) {
+        document.getElementById("search").placeholder = valu + " Filtresi ";
+    }
+
+</script>
+
+
+
+
+
