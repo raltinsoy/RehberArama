@@ -14,14 +14,7 @@ namespace Arama.Controllers
         // GET: DetayliArama
         public ActionResult Index()
         {
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "Ad", Value = "Ad", Selected = true });
-            items.Add(new SelectListItem { Text = "Soyad", Value = "Soyad" });
-            items.Add(new SelectListItem { Text = "Müdürlük", Value = "Unite" });
-            items.Add(new SelectListItem { Text = "Fabrika", Value = "Fabrika" });
-            items.Add(new SelectListItem { Text = "Pozisyon", Value = "Pozisyon" });
-            items.Add(new SelectListItem { Text = "Telefon", Value = "Kurumsal Telefon" });
-            ViewBag.Kategori = items;
+            ViewBag.Kategori = AramaSecenekleriSingletonPattern.AramaSecenekleri;
             return View();
         }
 
@@ -29,15 +22,7 @@ namespace Arama.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(queryModeli model)
         {
-            // Arama kısmı kategorileri
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "Ad", Value = "Ad", Selected = true });
-            items.Add(new SelectListItem { Text = "Soyad", Value = "Soyad" });
-            items.Add(new SelectListItem { Text = "Müdürlük", Value = "Unite" });
-            items.Add(new SelectListItem { Text = "Fabrika", Value = "Fabrika" });
-            items.Add(new SelectListItem { Text = "Pozisyon", Value = "Pozisyon" });
-            items.Add(new SelectListItem { Text = "Telefon", Value = "Kurumsal Telefon" });
-            ViewBag.Kategori = items;
+            ViewBag.Kategori = AramaSecenekleriSingletonPattern.AramaSecenekleri;
 
             if (!String.IsNullOrEmpty(model.search) && !String.IsNullOrEmpty(model.kategori))
             {
@@ -88,9 +73,9 @@ namespace Arama.Controllers
                 }
 
                 List<DetayliAramaModel> liste = new List<DetayliAramaModel>(); ;
-                foreach(var i in kisi)
+                foreach (var i in kisi)
                 {
-                    liste.Add(new DetayliAramaModel{ kisi=i.Ad+" "+i.Soyad,kisiID=i.ID});
+                    liste.Add(new DetayliAramaModel { kisi = i.Ad + " " + i.Soyad, kisiID = i.ID });
                 }
 
                 return View(liste);
@@ -108,7 +93,7 @@ namespace Arama.Controllers
             if (sonuc == null)
                 return new HttpNotFoundResult();
 
-            return PartialView("_SonucGetir",sonuc);
+            return PartialView("_SonucGetir", sonuc);
 
         }
     }

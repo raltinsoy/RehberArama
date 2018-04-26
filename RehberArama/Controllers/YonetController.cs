@@ -15,7 +15,7 @@ namespace Arama.Controllers
     {
         // Veritabanı bağlantısı
         private RehberEntities db = new RehberEntities();
-        
+
         // GET: Yonet
         public ActionResult Index()
         {

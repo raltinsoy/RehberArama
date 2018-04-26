@@ -21,15 +21,7 @@ namespace Arama.Controllers
         [HttpGet]
         public ActionResult SorguKategori()
         {
-            // Arama kısmı kategorileri
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "Ad", Value = "Ad", Selected = true });
-            items.Add(new SelectListItem { Text = "Soyad", Value = "Soyad" });
-            items.Add(new SelectListItem { Text = "Müdürlük", Value = "Unite" });
-            items.Add(new SelectListItem { Text = "Fabrika", Value = "Fabrika" });
-            items.Add(new SelectListItem { Text = "Pozisyon", Value = "Pozisyon" });
-            items.Add(new SelectListItem { Text = "Telefon", Value = "Kurumsal Telefon" });
-            ViewBag.Kategori = items;
+            ViewBag.Kategori = AramaSecenekleriSingletonPattern.AramaSecenekleri;
             return View();
         }
 
@@ -37,15 +29,7 @@ namespace Arama.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SorguKategori(queryModeli model)
         {
-            // Arama kısmı kategorileri
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "Ad", Value = "Ad", Selected = true });
-            items.Add(new SelectListItem { Text = "Soyad", Value = "Soyad" });
-            items.Add(new SelectListItem { Text = "Müdürlük", Value = "Unite" });
-            items.Add(new SelectListItem { Text = "Fabrika", Value = "Fabrika" });
-            items.Add(new SelectListItem { Text = "Pozisyon", Value = "Pozisyon" });
-            items.Add(new SelectListItem { Text = "Telefon", Value = "Kurumsal Telefon" });
-            ViewBag.Kategori = items;
+            ViewBag.Kategori = AramaSecenekleriSingletonPattern.AramaSecenekleri; ;
 
             if (!String.IsNullOrEmpty(model.search) && !String.IsNullOrEmpty(model.kategori))
             {
@@ -60,7 +44,7 @@ namespace Arama.Controllers
                 else
                     donen = new SelectList(db.SearchModels, "Ad", model.kategori, "ID", db)
                         .Where(s => s.Text.ToLower().StartsWith(model.search.ToLower()));
-                
+
 
                 /*if (kategori == "Ad")
                 {
@@ -171,7 +155,7 @@ namespace Arama.Controllers
                 else // Olmayan kategori seçimi
                     return PartialView();
                 var sirali = kisi.OrderBy(m => m.Soyad);
-                return PartialView("SoyadGetir",sirali);
+                return PartialView("SoyadGetir", sirali);
             }
             return PartialView();
         }

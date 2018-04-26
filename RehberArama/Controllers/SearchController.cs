@@ -10,7 +10,7 @@ namespace RehberArama.Controllers
     public class SearchController : Controller
     {
         private RehberEntities db = new RehberEntities();
-        
+
         [HttpGet]
         public ActionResult Index()
         {
